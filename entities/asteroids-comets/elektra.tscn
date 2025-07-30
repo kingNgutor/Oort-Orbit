@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://crmgri052iomk"]
+
+[node name="Elektra" type="RigidBody3D"]

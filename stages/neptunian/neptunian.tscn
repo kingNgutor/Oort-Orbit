@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://db8byl4ncyr1m"]
+
+[ext_resource type="Texture2D" uid="uid://cumqqwnnqi62g" path="res://stages/neptunian/neptuneSkybox_withNebula.hdr" id="1_d2i1a"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_6kcs0"]
+panorama = ExtResource("1_d2i1a")
+
+[sub_resource type="Sky" id="Sky_ax8g0"]
+sky_material = SubResource("PanoramaSkyMaterial_6kcs0")
+
+[sub_resource type="Environment" id="Environment_jk5gs"]
+background_mode = 2
+sky = SubResource("Sky_ax8g0")
+reflected_light_source = 2
+
+[node name="Neptunian" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jk5gs")

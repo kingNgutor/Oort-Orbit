@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cyqwin81qwcfv"
+path="res://.godot/imported/egeria.obj-0319ab6640d6608063a044e87db9d606.mesh"
+
+[deps]
+
+files=["res://.godot/imported/egeria.obj-0319ab6640d6608063a044e87db9d606.mesh"]
+
+source_file="res://assets/meshes/space_debris/asteroids_comets/egeria/egeria.obj"
+dest_files=["res://.godot/imported/egeria.obj-0319ab6640d6608063a044e87db9d606.mesh", "res://.godot/imported/egeria.obj-0319ab6640d6608063a044e87db9d606.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

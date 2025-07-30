@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://b067pf4ek26p"
+path.s3tc="res://.godot/imported/USS_Prometheus_NX-59650_prfront.jpg-7c5c3431e5488786348976257e769dff.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "216133d3d97fd141ed107c4c2860c345"
+}
+
+[deps]
+
+source_file="res://assets/meshes/player/uss_prometheus_nx59650/USS_Prometheus_NX-59650_prfront.jpg"
+dest_files=["res://.godot/imported/USS_Prometheus_NX-59650_prfront.jpg-7c5c3431e5488786348976257e769dff.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

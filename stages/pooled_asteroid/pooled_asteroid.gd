@@ -72,7 +72,7 @@ func despawn_specific_asteroid(offscreen_instance: RigidBody3D):
 func _physics_process(_delta):
 	
 	if Input.is_action_just_pressed("ui_accept"):
-		spawn(11)
+		spawn(1)
 
 	#if Input.is_action_just_pressed("ui_text_backspace"):
 		#despawn_FIFO()

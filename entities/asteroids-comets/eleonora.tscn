@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://61awvvrsdjqt"]
+
+[ext_resource type="ArrayMesh" uid="uid://bcm3it7af5ef" path="res://assets/meshes/space_debris/asteroids_comets/eleonora/eleonora.obj" id="1_637ke"]
+[ext_resource type="Script" path="res://entities/asteroids-comets/eleonora.gd" id="1_g3wh8"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g3wh8"]
+
+[node name="Eleonora" type="RigidBody3D"]
+script = ExtResource("1_g3wh8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_g3wh8")
+
+[node name="eleonora_MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_637ke")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://crmgri052iomk"]
+[gd_scene load_steps=5 format=3 uid="uid://crmgri052iomk"]
 
 [ext_resource type="Script" path="res://entities/asteroids-comets/elektra.gd" id="1_fxgda"]
 [ext_resource type="ArrayMesh" uid="uid://baakot41xp4iw" path="res://assets/meshes/space_debris/asteroids_comets/elektra/elektra.obj" id="1_qsn0m"]
+[ext_resource type="PackedScene" uid="uid://bym0acqviyivb" path="res://assets/meshes/space_debris/asteroids_comets/elektra/elektra.glb" id="3_lb6wy"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_fxgda"]
 radius = 0.60635
@@ -18,5 +19,8 @@ shape = SubResource("SphereShape3D_fxgda")
 mesh = ExtResource("1_qsn0m")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+
+[node name="elektra" parent="." instance=ExtResource("3_lb6wy")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6.84323, 0, 0)
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]

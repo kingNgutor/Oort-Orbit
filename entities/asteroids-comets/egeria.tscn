@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpx2btvo7y3nf"]
+
+[ext_resource type="ArrayMesh" uid="uid://cyqwin81qwcfv" path="res://assets/meshes/space_debris/asteroids_comets/egeria/egeria.obj" id="1_5wu4m"]
+[ext_resource type="Script" path="res://entities/asteroids-comets/egeria.gd" id="1_eyxiu"]
+[ext_resource type="PackedScene" uid="uid://bvm325pokxmfs" path="res://assets/meshes/space_debris/asteroids_comets/egeria/egeria.glb" id="3_f7iv2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_eyxiu"]
+
+[node name="Egeria" type="RigidBody3D"]
+script = ExtResource("1_eyxiu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_eyxiu")
+
+[node name="egeria_MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_5wu4m")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.407368)
+
+[node name="egeria" parent="." instance=ExtResource("3_f7iv2")]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, -4.25914)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]

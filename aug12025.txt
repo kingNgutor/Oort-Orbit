@@ -1,0 +1,35 @@
+[33mcommit 9455edff2e83a03d61c9b5a786b3ea2a841d5ac0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: kingNgutor <cen10ium@proton.me>
+Date:   Fri Aug 1 13:15:46 2025 +0100
+
+    added node3d for .glb on asteroids, acquiring textures on rigidbody3Ds
+
+[33mcommit 8c8a31f7927b7f4ecf5acc22c02cbc599f658b22[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: kingNgutor <cen10ium@proton.me>
+Date:   Fri Aug 1 09:16:34 2025 +0100
+
+    automatic return-to-pool of offscreen asteroid rigidbody3Ds
+
+[33mcommit 17d542be36eff5dcffa787726afad025e386061d[m
+Author: kingNgutor <cen10ium@proton.me>
+Date:   Wed Jul 30 20:00:21 2025 +0100
+
+    created new rigidbody3d entity: [elektra.tscn]
+
+[33mcommit 94054f2627684e5cca27d838cfc3122f13e0f67d[m
+Author: kingNgutor <cen10ium@proton.me>
+Date:   Wed Jul 30 19:37:21 2025 +0100
+
+    updated Godot Git Plugin from v3.1.1 to v3.2.0
+
+[33mcommit 5b4e6be633eb67b185ad8826705111175bf0d54c[m
+Author: kingNgutor <cen10ium@proton.me>
+Date:   Wed Jul 30 19:23:56 2025 +0100
+
+    testing LFS
+
+[33mcommit e8400416cb1b32aa7e5bf21630a35476ddfda9b9[m[33m ([m[1;32mmain[m[33m)[m
+Author: kingNgutor <cen10ium@proton.me>
+Date:   Wed Jul 30 11:10:11 2025 +0100
+
+    init

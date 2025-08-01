@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://1wmx5rj28s82"]
+
+[ext_resource type="ArrayMesh" uid="uid://bdu2daip32due" path="res://object_pool/astroid2obj.obj" id="1_rhsw8"]
+[ext_resource type="Script" path="res://rigid_body_asteroids.gd" id="1_yhk6c"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yhk6c"]
+friction = 0.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hlrek"]
+radius = 1.68735
+
+[node name="RigidBody3D" type="RigidBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_yhk6c")
+gravity_scale = 0.0
+script = ExtResource("1_yhk6c")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.823698, 0, 0, 0, 1, 0, 0, 0, 1, -4.73378, 0, 0)
+mesh = ExtResource("1_rhsw8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00745, 0.21204, 0)
+shape = SubResource("SphereShape3D_hlrek")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04865, 0.476912, -0.186166)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]

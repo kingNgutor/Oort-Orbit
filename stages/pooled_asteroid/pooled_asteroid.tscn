@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdxy1f0hxfya0"]
+
+[ext_resource type="Script" path="res://stages/pooled_asteroid/pooled_asteroid.gd" id="1_sds7e"]
+[ext_resource type="Script" path="res://common/object_pool/ObjectPool.gd" id="2_wshd3"]
+[ext_resource type="PackedScene" uid="uid://crmgri052iomk" path="res://entities/asteroids-comets/elektra.tscn" id="3_nsm68"]
+
+[node name="pooled_asteroid" type="Node3D"]
+script = ExtResource("1_sds7e")
+
+[node name="objectPool" type="Node3D" parent="."]
+script = ExtResource("2_wshd3")
+scene = ExtResource("3_nsm68")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 208.661)

@@ -14,6 +14,11 @@ config/name="Oort Orbit"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://utilities/icons/tiny_logo_oortorbit.svg"
 
+[autoload]
+
+GlobalAutoload="*res://autoload/global_autoload.gd"
+GlobalSignal="*res://autoload/global_signal.gd"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"

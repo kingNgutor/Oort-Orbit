@@ -6,8 +6,10 @@ class_name ObjectPool
 @export var initial_size: int = 10
 #@onready var instID_str : String
 
-var _pool: Array = []
-var _in_use: Array = []
+var _pool = GlobalAutoload._pool
+var _in_use = GlobalAutoload._in_use
+#var _pool: Array = []
+#var _in_use: Array = []
 
 #signal current_pool_usage(new_value: Array)
 
@@ -30,7 +32,7 @@ func get_instance() -> Node:
 		obj = scene.instantiate()
 		add_child(obj)
 		#obj.connect("exited_id", _on_exited_id)
-		obj.exited_id.connect(Callable(self, "_on_exited_id"))
+#		obj.exited_id.connect(Callable(self, "_on_exited_id"))
 	else:
 		obj = _pool.pop_back()
 
@@ -53,9 +55,9 @@ func return_instance(obj: Node) -> void:
 	obj.set_physics_process(false)
 	_pool.append(obj)
 
-func _on_exited_id():
-	
-	print("exited_id signal received in ObjectPool: ", _on_exited_id().self)
+#func _on_exited_id():
+	#
+	#print("exited_id signal received in ObjectPool: ", _on_exited_id().self)
 	#_in_use.erase(self)
 	#return self
 	

@@ -10,10 +10,29 @@ sky_material = SubResource("PanoramaSkyMaterial_6kcs0")
 
 [sub_resource type="Environment" id="Environment_jk5gs"]
 background_mode = 2
+background_energy_multiplier = 1.6
 sky = SubResource("Sky_ax8g0")
 reflected_light_source = 2
+volumetric_fog_density = 0.197
+volumetric_fog_albedo = Color(0.0443228, 0.104306, 0.0181399, 1)
+volumetric_fog_emission_energy = 43.15
+volumetric_fog_gi_inject = 1.7
+volumetric_fog_anisotropy = -0.9
+volumetric_fog_detail_spread = 0.5
+volumetric_fog_sky_affect = 0.324
 
 [node name="Neptunian" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jk5gs")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.115, 115.897, 200)
+light_color = Color(0.808332, 0.90292, 0.991887, 1)
+light_energy = 16.0
+light_indirect_energy = 1.96
+light_angular_distance = 36.9
+shadow_enabled = true
+directional_shadow_mode = 0
+directional_shadow_max_distance = 64.0
+directional_shadow_pancake_size = 9.2

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://pi5id2mtjbds"]
+
+[ext_resource type="PackedScene" uid="uid://db8byl4ncyr1m" path="res://stages/neptunian/neptunian.tscn" id="1_xj1cp"]
+[ext_resource type="PackedScene" uid="uid://bdxy1f0hxfya0" path="res://stages/pooled_asteroid/pooled_asteroid.tscn" id="2_72h1y"]
+
+[node name="Oort_[neptunian+pooled_asteroid]" type="Node3D"]
+
+[node name="Neptunian" parent="." instance=ExtResource("1_xj1cp")]
+
+[node name="pooled_asteroid" parent="." instance=ExtResource("2_72h1y")]

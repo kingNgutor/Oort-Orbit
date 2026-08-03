@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4xgwqgxtyhp2"]
+
+[ext_resource type="Theme" uid="uid://ddihndo0066mo" path="res://UI/HUD/HealthBar_theme.tres" id="1_7d34n"]
+
+[node name="HealthBar_Control_Node" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 4.0
+offset_right = 54.0
+offset_bottom = 27.0
+text = "Shield"
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 2.0
+offset_right = 188.0
+offset_bottom = 29.0
+theme = ExtResource("1_7d34n")
+value = 100.0
+show_percentage = false

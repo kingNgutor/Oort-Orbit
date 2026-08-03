@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://crmgri052iomk"]
+
+[ext_resource type="Script" uid="uid://cg8hnjcm3qjcg" path="res://entities/asteroids-comets/elektra.gd" id="1_fxgda"]
+[ext_resource type="ArrayMesh" uid="uid://cm6kbw3goaso4" path="res://assets/meshes/space_debris/asteroids_comets/elektra/lowpoly/elektra.tres" id="2_fxgda"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lb6wy"]
+radius = 0.805747
+height = 3.47958
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fxgda"]
+radius = 0.60635
+
+[node name="Elektra" type="RigidBody3D"]
+gravity_scale = 0.0
+script = ExtResource("1_fxgda")
+
+[node name="elektra_meshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.8, 0, 0, 0, 4.8, 0, 0, 0, 4.8, -2.7297916, -0.9967785, 0)
+mesh = ExtResource("2_fxgda")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="healthCollider" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.85785, 0.541043, -0.505627, -0.740531, 1.35737, -1.26852, 0, 1.36558, 1.46123, -0.0267785, 0.460554, -0.44312)
+shape = SubResource("CapsuleShape3D_lb6wy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, -0.130987, 0.339692, 0)
+shape = SubResource("SphereShape3D_fxgda")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

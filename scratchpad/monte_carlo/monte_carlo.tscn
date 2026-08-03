@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dbkshk6mmtf6l"]
+
+[ext_resource type="Script" uid="uid://bfpu3wrepnwyw" path="res://scratchpad/monte_carlo/monte_carlo.gd" id="1_gwqdi"]
+
+[node name="monteCarlo" type="Node3D" unique_id=961371845]
+script = ExtResource("1_gwqdi")

@@ -1,0 +1,20 @@
+[gd_resource type="QuadMesh" format=3 uid="uid://bfixajtwnkbag"]
+
+[ext_resource type="Texture2D" uid="uid://g11wgbkeik4v" path="res://assets/textures/flame_smaller.png" id="1_hfqe1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_orn4k"]
+render_priority = 1
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.854978, 0.315355, 0.208643, 1)
+albedo_texture = ExtResource("1_hfqe1")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[resource]
+material = SubResource("StandardMaterial3D_orn4k")

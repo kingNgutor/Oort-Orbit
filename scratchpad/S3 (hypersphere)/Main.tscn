@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://dwca8buc8o3wy"]
+
+[ext_resource type="Script" uid="uid://k4dv3vv8ibnk" path="res://scratchpad/S3 (hypersphere)/Main.gd" id="1"]
+[ext_resource type="Script" uid="uid://ju0o0rpfc7sh" path="res://scratchpad/S3 (hypersphere)/Ship.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://ce048m8kring7" path="res://scratchpad/S3 (hypersphere)/ESO_-_Milky_Way.jpg" id="3_r0du0"]
+[ext_resource type="PackedScene" uid="uid://uudfirdwfoho" path="res://scratchpad/player_spaceship/player_spaceship[scratchpad].tscn" id="4_notay"]
+[ext_resource type="Script" uid="uid://h3l8dloixk1x" path="res://scratchpad/S3 (hypersphere)/IPC-S3-[rawdog-no-LLM].gd" id="5_goets"]
+[ext_resource type="PackedScene" uid="uid://ypy7v8x822ik" path="res://entities/explosion/explosion.tscn" id="6_fson4"]
+
+[sub_resource type="BoxMesh" id="2"]
+size = Vector3(0.9, 0.7, 2.2)
+
+[sub_resource type="StandardMaterial3D" id="3"]
+albedo_color = Color(0.75, 0.8, 0.9, 1)
+metallic = 0.6
+roughness = 0.3
+
+[sub_resource type="StandardMaterial3D" id="4"]
+albedo_color = Color(0.9, 0.35, 0.15, 1)
+emission_enabled = true
+emission = Color(0.9, 0.35, 0.15, 1)
+emission_energy_multiplier = 1.5
+
+[sub_resource type="BoxShape3D" id="1"]
+size = Vector3(0.9, 0.7, 2.2)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_cm0pq"]
+panorama = ExtResource("3_r0du0")
+
+[sub_resource type="Sky" id="Sky_fos0i"]
+sky_material = SubResource("PanoramaSkyMaterial_cm0pq")
+
+[sub_resource type="Environment" id="Environment_3dxm6"]
+background_mode = 2
+sky = SubResource("Sky_fos0i")
+
+[node name="Main" type="Node3D" unique_id=2075011763]
+script = ExtResource("1")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=628421415]
+transform = Transform3D(0.8, -0.3, 0.5, 0, 0.86, 0.5, -0.6, -0.4, 0.69, 0, 0, 0)
+light_energy = 1.1
+shadow_enabled = true
+
+[node name="World" type="Node3D" parent="." unique_id=661954839]
+
+[node name="Ship" type="CharacterBody3D" parent="." unique_id=12078836]
+script = ExtResource("2")
+
+[node name="Hull" type="MeshInstance3D" parent="Ship" unique_id=1886526208]
+mesh = SubResource("2")
+surface_material_override/0 = SubResource("3")
+
+[node name="Thruster" type="MeshInstance3D" parent="Ship" unique_id=1411349775]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 1.15)
+mesh = SubResource("2")
+surface_material_override/0 = SubResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ship" unique_id=1394922067]
+shape = SubResource("1")
+
+[node name="CameraRig" type="Node3D" parent="Ship" unique_id=1359871474]
+transform = Transform3D(1, 0, 0, 0, 0.966, 0.259, 0, -0.259, 0.966, 0, 2.2, 6)
+
+[node name="Camera3D" type="Camera3D" parent="Ship/CameraRig" unique_id=1734250213]
+current = true
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1244605183]
+
+[node name="Label" type="Label" parent="HUD" unique_id=280374527]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 660.0
+offset_bottom = 220.0
+theme_override_font_sizes/font_size = 16
+text = "S3 Ship"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2031674150]
+environment = SubResource("Environment_3dxm6")
+
+[node name="CharacterBody3D" parent="." unique_id=1575760217 instance=ExtResource("4_notay")]
+visible = false
+
+[node name="lookat" type="Node3D" parent="CharacterBody3D" unique_id=1739960678]
+
+[node name="cameraTarget" type="Marker3D" parent="CharacterBody3D" unique_id=914374123]
+
+[node name="flycam" type="Node3D" parent="." unique_id=1855644188 node_paths=PackedStringArray("target", "camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.2681284)
+visible = false
+script = ExtResource("5_goets")
+target = NodePath("../CharacterBody3D/cameraTarget")
+camera = NodePath("Camera3D")
+
+[node name="Camera3D" type="Camera3D" parent="flycam" unique_id=947666554]
+
+[node name="Explosion" parent="flycam" unique_id=108463496 instance=ExtResource("6_fson4")]

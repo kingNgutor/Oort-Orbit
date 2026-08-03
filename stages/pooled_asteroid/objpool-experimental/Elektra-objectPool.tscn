@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://crdmyg84c5k8u"]
+
+[ext_resource type="Script" uid="uid://bp1823y15ytyb" path="res://common/object_pool/ObjectPool.gd" id="1_f0i0y"]
+[ext_resource type="PackedScene" uid="uid://crmgri052iomk" path="res://entities/asteroids-comets/elektra.tscn" id="2_151o3"]
+[ext_resource type="PackedScene" uid="uid://ckxsb6g8pbjqb" path="res://entities/asteroids-comets/comet/comet.tscn" id="3_4veok"]
+[ext_resource type="ArrayMesh" uid="uid://o2yorek86qa" path="res://scratchpad/elektra_multimesh_version/elektra.tres" id="3_151o3"]
+
+[sub_resource type="MultiMesh" id="MultiMesh_4veok"]
+transform_format = 1
+use_custom_data = true
+mesh = ExtResource("3_151o3")
+
+[node name="objectPool" type="Node3D" unique_id=1551938772]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+script = ExtResource("1_f0i0y")
+scene = ExtResource("2_151o3")
+scene_1 = ExtResource("3_4veok")
+
+[node name="pool_mmi3d" type="MultiMeshInstance3D" parent="." unique_id=1222437514]
+multimesh = SubResource("MultiMesh_4veok")

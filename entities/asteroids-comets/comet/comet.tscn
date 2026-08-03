@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ckxsb6g8pbjqb"]
+
+[ext_resource type="ArrayMesh" uid="uid://dxxbum1xqwmga" path="res://assets/meshes/space_debris/asteroids_comets/comet/comet.tres" id="1_72hg6"]
+[ext_resource type="Script" uid="uid://da4ya8hsq1kxr" path="res://entities/asteroids-comets/comet/comet.gd" id="1_gp5wt"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gp5wt"]
+radius = 0.42576686
+
+[node name="comet" type="RigidBody3D" unique_id=2078309140]
+script = ExtResource("1_gp5wt")
+
+[node name="comet_mesh" type="MeshInstance3D" parent="." unique_id=457215619]
+mesh = ExtResource("1_72hg6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2098348821]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.0135502815, 0.027146876, -0.12756097)
+shape = SubResource("SphereShape3D_gp5wt")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=1323086232]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]

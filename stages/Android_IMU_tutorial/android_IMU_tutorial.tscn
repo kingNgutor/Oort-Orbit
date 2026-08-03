@@ -1,0 +1,55 @@
+[gd_scene load_steps=11 format=3 uid="uid://dqxopda8rulms"]
+
+[ext_resource type="Texture2D" uid="uid://bmw1nmcd3svxj" path="res://UI/title_screen/neptuneIcon.png" id="1_1i62n"]
+[ext_resource type="Script" path="res://stages/worldenv_Player_AsteroidPool/game_manager.gd" id="2_7qnh3"]
+[ext_resource type="Script" path="res://common/camera/flycam.gd" id="3_rgs1g"]
+[ext_resource type="PackedScene" uid="uid://ypy7v8x822ik" path="res://entities/explosion/explosion.tscn" id="4_kroq7"]
+[ext_resource type="PackedScene" uid="uid://byng3phbk51mq" path="res://entities/player_spaceship/player_spaceship.tscn" id="5_5s3rx"]
+[ext_resource type="Script" path="res://entities/player_spaceship/[DEPRECATED]/IMU_spaceshipController.gd" id="6_4j3lb"]
+[ext_resource type="PackedScene" uid="uid://bdxy1f0hxfya0" path="res://stages/pooled_asteroid/pooled_asteroid.tscn" id="7_7qnh3"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bpnpd"]
+panorama = ExtResource("1_1i62n")
+
+[sub_resource type="Sky" id="Sky_t7m5p"]
+sky_material = SubResource("PanoramaSkyMaterial_bpnpd")
+
+[sub_resource type="Environment" id="Environment_2o04o"]
+background_mode = 2
+sky = SubResource("Sky_t7m5p")
+
+[node name="root" type="Node3D"]
+
+[node name="worldPivot" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="worldPivot"]
+environment = SubResource("Environment_2o04o")
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("2_7qnh3")
+
+[node name="flycam" type="Node3D" parent="." node_paths=PackedStringArray("target")]
+script = ExtResource("3_rgs1g")
+target = NodePath("../CharacterBody3D/target")
+
+[node name="Camera3D" type="Camera3D" parent="flycam"]
+
+[node name="Explosion" parent="flycam" instance=ExtResource("4_kroq7")]
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("5_5s3rx")]
+script = ExtResource("6_4j3lb")
+rotation_speed = 1.5
+thrust_power = 10.0
+vertical_thrust_power = 5.0
+boost_multiplier = 2.0
+brake_damping = 5.0
+max_speed = 100.0
+roll_amout = 20.0
+alpha = 0.1
+min_vertical_angle = -0.785398
+max_vertical_angle = 0.785398
+
+[node name="target" type="Node3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.26258)
+
+[node name="pooled_asteroid" parent="." instance=ExtResource("7_7qnh3")]

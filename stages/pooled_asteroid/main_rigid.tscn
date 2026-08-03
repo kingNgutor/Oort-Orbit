@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://18yo8023ye0o"]
+
+[ext_resource type="Script" path="res://main_rigid.gd" id="1_jwusw"]
+[ext_resource type="Script" path="res://object_pool/ObjectPool.gd" id="2_tuf8y"]
+[ext_resource type="PackedScene" uid="uid://cyvw35ccwlanp" path="res://rigid_body_ObjPool.tscn" id="3_frk1y"]
+[ext_resource type="PackedScene" uid="uid://1wmx5rj28s82" path="res://rigid_body_asteroids.tscn" id="4_tuf8y"]
+
+[node name="mainRigid" type="Node3D"]
+script = ExtResource("1_jwusw")
+
+[node name="objectPool" type="Node3D" parent="."]
+script = ExtResource("2_tuf8y")
+scene = ExtResource("3_frk1y")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_size = 0.3
+
+[node name="asteroid_objPool" type="Node3D" parent="."]
+script = ExtResource("2_tuf8y")
+scene = ExtResource("4_tuf8y")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 376.424)

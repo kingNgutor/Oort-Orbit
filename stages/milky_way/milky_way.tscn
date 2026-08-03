@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://7vuhjdhx0stn"]
+
+[ext_resource type="Texture2D" uid="uid://1smyfgikylq4" path="res://assets/textures/ESO_-_Milky_Way.jpg" id="1_8bdlp"]
+[ext_resource type="Texture2D" uid="uid://coqadqu3tucyy" path="res://assets/textures/2k_sun.jpg" id="2_ydr54"]
+[ext_resource type="Texture2D" uid="uid://0micr1sow52w" path="res://assets/textures/2k_earth_daymap.jpg" id="3_2olsq"]
+[ext_resource type="PackedScene" uid="uid://byng3phbk51mq" path="res://entities/player_spaceship/player_spaceship.tscn" id="5_8bdlp"]
+[ext_resource type="Script" uid="uid://djjb1xt5by1rn" path="res://common/camera/followCam.gd" id="5_665j5"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tcotm"]
+panorama = ExtResource("1_8bdlp")
+
+[sub_resource type="Sky" id="Sky_ydr54"]
+sky_material = SubResource("PanoramaSkyMaterial_tcotm")
+
+[sub_resource type="Environment" id="Environment_2olsq"]
+background_mode = 2
+sky = SubResource("Sky_ydr54")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8bdlp"]
+albedo_color = Color(1, 1, 0.929412, 1)
+albedo_texture = ExtResource("2_ydr54")
+emission_enabled = true
+emission = Color(0.730216, 0.730216, 0.730216, 1)
+emission_energy_multiplier = 4.0
+emission_texture = ExtResource("2_ydr54")
+
+[sub_resource type="SphereMesh" id="SphereMesh_665j5"]
+material = SubResource("StandardMaterial3D_8bdlp")
+radius = 100.0
+height = 50.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npcmu"]
+albedo_texture = ExtResource("3_2olsq")
+
+[sub_resource type="SphereMesh" id="SphereMesh_duun8"]
+material = SubResource("StandardMaterial3D_npcmu")
+radius = 0.25
+height = 0.5
+
+[node name="milky_way" type="Node3D" unique_id=737343367]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=427092334]
+environment = SubResource("Environment_2olsq")
+
+[node name="sun" type="StaticBody3D" parent="." unique_id=1680639683]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.908697, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="sun" unique_id=1208341829]
+transform = Transform3D(0.27907, 0, 0, 0, 1, 0, 0, 0, 0.306065, 0, 0, 0)
+mesh = SubResource("SphereMesh_665j5")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="sun" unique_id=1049465481]
+light_energy = 5.0
+omni_range = 1000.0
+
+[node name="earth" type="StaticBody3D" parent="." unique_id=437584314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 122.852, 0, -0.590195)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="earth" unique_id=255991877]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.31, 0.0889906, 0.664721)
+mesh = SubResource("SphereMesh_duun8")
+
+[node name="CharacterBody3D" parent="." unique_id=465655804 instance=ExtResource("5_8bdlp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -99.9945)
+
+[node name="look_at_node" type="Node3D" parent="CharacterBody3D" unique_id=1455521248]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.216446)
+
+[node name="flycam" type="Node3D" parent="." unique_id=601978348]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -58.9979)
+script = ExtResource("5_665j5")
+target_path = NodePath("../CharacterBody3D")
+look_at_target_path = NodePath("../CharacterBody3D/look_at_node")
+
+[node name="Camera3D" type="Camera3D" parent="flycam" unique_id=1954172500]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.263985)

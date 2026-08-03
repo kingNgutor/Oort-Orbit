@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://pi5id2mtjbds"]
+
+[ext_resource type="PackedScene" uid="uid://db8byl4ncyr1m" path="res://stages/neptunian/neptunian.tscn" id="1_xj1cp"]
+[ext_resource type="Script" path="res://stages/pooled_asteroid/objpool-experimental/pooled_asteroid-[Autoload-Version].gd" id="2_xj1cp"]
+[ext_resource type="PackedScene" uid="uid://byng3phbk51mq" path="res://entities/player_spaceship/player_spaceship.tscn" id="3_xnnt6"]
+[ext_resource type="PackedScene" uid="uid://ypy7v8x822ik" path="res://entities/explosion/explosion.tscn" id="4_cvl6t"]
+[ext_resource type="Script" path="res://stages/Oort_neptunian+pooled_asteroid]/flycam-inertial-follow-oort.gd" id="4_fbymj"]
+
+[node name="Oort_[neptunian+pooled_asteroid]" type="Node3D"]
+
+[node name="Neptunian" parent="." instance=ExtResource("1_xj1cp")]
+
+[node name="asteroid-objecPool" type="Node3D" parent="."]
+script = ExtResource("2_xj1cp")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("3_xnnt6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+
+[node name="CameraAnchor [Marker3D]" type="Marker3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.5)
+
+[node name="flycam" type="Node3D" parent="."]
+script = ExtResource("4_fbymj")
+
+[node name="Camera3D" type="Camera3D" parent="flycam"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+
+[node name="Explosion" parent="flycam" instance=ExtResource("4_cvl6t")]

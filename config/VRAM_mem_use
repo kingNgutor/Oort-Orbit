@@ -1,0 +1,117 @@
+Resource Path,Type,Format,Usage
+res://assets/textures/eso0932a.png,Texture,6000x3000 DXT1 RGB8,11.44 MiB
+res://assets/meshes/player/uss_prometheus_nx59650/USS_Prometheus_NX-59650_prup4.jpg,Texture,4096x4096 DXT1 RGB8,10.66 MiB
+res://assets/meshes/player/uss_prometheus_nx59650/USS_Prometheus_NX-59650_prbottom.jpg,Texture,4096x4096 DXT1 RGB8,10.66 MiB
+res://assets/meshes/player/uss_prometheus_nx59650/USS_Prometheus_NX-59650_prtop.jpg,Texture,4096x4096 DXT1 RGB8,10.66 MiB
+res://assets/meshes/player/uss_prometheus_nx59650/USS_Prometheus_NX-59650_prtop1.jpg,Texture,4096x4096 DXT1 RGB8,10.66 MiB
+res://assets/meshes/player/uss_prometheus_nx59650/USS_Prometheus_NX-59650_prtopscritta.jpg,Texture,4096x4096 DXT1 RGB8,10.66 MiB
+res://assets/meshes/player/uss_prometheus_nx59650/USS_Prometheus_NX-59650_prbottom1.jpg,Texture,4096x4096 DXT1 RGB8,10.66 MiB
+res://assets/meshes/player/uss_prometheus_nx59650/USS_Prometheus_NX-59650_prbottom0.jpg,Texture,4096x4096 DXT1 RGB8,10.66 MiB
+res://assets/meshes/player/uss_prometheus_nx59650/USS_Prometheus_NX-59650_prside.jpg,Texture,4096x4096 DXT1 RGB8,10.66 MiB
+res://assets/meshes/player/uss_prometheus_nx59650/USS_Prometheus_NX-59650_prup3.jpg,Texture,4096x4096 DXT1 RGB8,10.66 MiB
+res://assets/meshes/player/uss_prometheus_nx59650/USS_Prometheus_NX-59650_prup2.jpg,Texture,4096x4096 DXT1 RGB8,10.66 MiB
+res://assets/meshes/player/uss_prometheus_nx59650/USS_Prometheus_NX-59650_prfront.jpg,Texture,2048x2048 DXT1 RGB8,2.66 MiB
+Render Target (Internal),Texture,1152x648 RGB8,2.13 MiB
+Render Target (Internal),Texture,1152x648 RGB8,2.13 MiB
+res://assets/meshes/player/uss_prometheus_nx59650/USS_Prometheus_NX-59650_prside1.jpg,Texture,1024x1024 DXT1 RGB8,682.6 KiB
+res://assets/meshes/player/uss_prometheus_nx59650/USS_Prometheus_NX-59650_prup1.jpg,Texture,1024x1024 DXT1 RGB8,682.6 KiB
+res://assets/meshes/space_debris/asteroids_comets/elektra/elektra_Elektra Base Color.png,Texture,1024x1024 DXT1 RGB8,682.6 KiB
+res://assets/meshes/player/uss_prometheus_nx59650/USS_Prometheus_NX-59650_symbol.jpg,Texture,1266x91 DXT1 RGB8,76.98 KiB
+res://assets/textures/flame_smaller.png,Texture,256x164 DXT5 RGBA8,55.17 KiB
+,Texture,800x6 RGBA8,18.75 KiB
+,Texture,800x6 RGBA8,18.75 KiB
+res://assets/meshes/player/uss_prometheus_nx59650/USS_Prometheus_NX-59650_prbrown.jpg,Texture,100x100 DXT1 RGB8,6.70 KiB
+res://assets/meshes/player/uss_prometheus_nx59650/USS_Prometheus_NX-59650_prgray3.jpg,Texture,100x100 DXT1 RGB8,6.70 KiB
+res://assets/meshes/player/uss_prometheus_nx59650/USS_Prometheus_NX-59650_pryellow.jpg,Texture,100x100 DXT1 RGB8,6.70 KiB
+res://assets/meshes/player/uss_prometheus_nx59650/USS_Prometheus_NX-59650_prgray1.jpg,Texture,100x100 DXT1 RGB8,6.70 KiB
+res://assets/meshes/player/uss_prometheus_nx59650/USS_Prometheus_NX-59650_prred.jpg,Texture,100x100 DXT1 RGB8,6.70 KiB
+res://assets/meshes/player/uss_prometheus_nx59650/USS_Prometheus_NX-59650_prgray2.jpg,Texture,100x100 DXT1 RGB8,6.70 KiB
+res://assets/meshes/player/uss_prometheus_nx59650/USS_Prometheus_NX-59650_prblue2.jpg,Texture,100x100 DXT1 RGB8,6.70 KiB
+res://assets/meshes/player/uss_prometheus_nx59650/USS_Prometheus_NX-59650_prgreen1.jpg,Texture,100x100 DXT1 RGB8,6.70 KiB
+res://assets/meshes/player/uss_prometheus_nx59650/USS_Prometheus_NX-59650_prwhite.jpg,Texture,100x100 DXT1 RGB8,6.70 KiB
+res://assets/meshes/player/uss_prometheus_nx59650/USS_Prometheus_NX-59650_prblue1.jpg,Texture,100x100 DXT1 RGB8,6.70 KiB
+res://assets/meshes/player/uss_prometheus_nx59650/USS_Prometheus_NX-59650_prblue.jpg,Texture,100x100 DXT1 RGB8,6.70 KiB
+res://assets/meshes/player/uss_prometheus_nx59650/USS_Prometheus_NX-59650_prgreen.jpg,Texture,100x100 DXT1 RGB8,6.70 KiB
+res://assets/meshes/player/uss_prometheus_nx59650/USS_Prometheus_NX-59650_prgray4.jpg,Texture,100x100 DXT1 RGB8,6.70 KiB
+res://assets/meshes/player/uss_prometheus_nx59650/USS_Prometheus_NX-59650_prbrow2.jpg,Texture,100x100 DXT1 RGB8,6.70 KiB
+res://assets/meshes/player/uss_prometheus_nx59650/USS_Prometheus_NX-59650_prgray5.jpg,Texture,100x100 DXT1 RGB8,6.70 KiB
+,Texture,256x1 RGBFloat,3.00 KiB
+,Texture,32x16 RGBA8,2.00 KiB
+,Texture,32x16 RGBA8,2.00 KiB
+,Texture,32x16 RGBA8,2.00 KiB
+,Texture,16x32 RGBA8,2.00 KiB
+,Texture,32x16 RGBA8,2.00 KiB
+,Texture,32x16 RGBA8,2.00 KiB
+,Texture,32x16 RGBA8,2.00 KiB
+,Texture,32x16 RGBA8,2.00 KiB
+,Texture,32x16 RGBA8,2.00 KiB
+,Texture,48x8 RGBA8,1.50 KiB
+,Texture,8x48 RGBA8,1.50 KiB
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+res://entities/player_spaceship/player_spaceship.tscn::GradientTexture1D_0nreo,Texture,256x1 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,12x12 RGBA8,576 B
+,Texture,12x12 RGBA8,576 B
+,Texture,12x12 RGBA8,576 B
+,Texture,8x16 RGBA8,512 B
+,Texture,8x16 RGBA8,512 B
+,Texture,16x8 RGBA8,512 B
+,Texture,16x8 RGBA8,512 B
+,Texture,14x8 RGBA8,448 B
+,Texture,10x10 RGBA8,400 B
+,Texture,4x16 RGBA8,256 B
+,Texture,16x4 RGBA8,256 B
+,Texture,8x8 RGBA8,256 B
+,Texture,8x8 RGBA8,256 B

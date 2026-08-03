@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dv741yuamoi3n"]
+
+[ext_resource type="Script" uid="uid://dhc8xi625vqr3" path="res://scratchpad/elektra_rb3d-[no mesh]/e_rb3d_nm/elektra_rb3dNoMesh.gd" id="1_84opc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lb6wy"]
+radius = 0.805747
+height = 3.47958
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fxgda"]
+radius = 0.60635
+
+[node name="elektra_rb3d-[no mesh]" type="RigidBody3D" unique_id=1984109843]
+collision_layer = 2
+collision_mask = 4
+gravity_scale = 0.0
+script = ExtResource("1_84opc")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=81950286]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=421829769]
+
+[node name="healthCollider" type="CollisionShape3D" parent="Area3D" unique_id=1901332514]
+transform = Transform3D(0.9289259, 0.27052134, -0.25281414, -0.37026584, 0.6786861, -0.6342621, 2.9802322e-08, 0.6827909, 0.7306138, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_lb6wy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1842188349]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.130987, 0.339692, 0)
+shape = SubResource("SphereShape3D_fxgda")
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

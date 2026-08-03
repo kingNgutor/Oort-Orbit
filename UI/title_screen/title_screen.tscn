@@ -1,0 +1,358 @@
+[gd_scene load_steps=19 format=3 uid="uid://dai1nccfcn862"]
+
+[ext_resource type="Texture2D" uid="uid://bmw1nmcd3svxj" path="res://UI/title_screen/neptuneIcon.png" id="1_cbldu"]
+[ext_resource type="Script" path="res://UI/title_screen/title_screen.gd" id="1_o101y"]
+[ext_resource type="FontFile" uid="uid://cfgyal3x3qrh" path="res://UI/title_screen/Pacifico-Regular.ttf" id="2_t6xir"]
+[ext_resource type="Texture2D" uid="uid://dps72plouemag" path="res://UI/title_screen/comet_alpha_transparent_background.png" id="3_uam0l"]
+[ext_resource type="Texture2D" uid="uid://dkw7ejcpwb3ww" path="res://UI/title_screen/elektra_alpha_transparent_background.png" id="4_mclxw"]
+[ext_resource type="Texture2D" uid="uid://b8xcljka14tv4" path="res://UI/title_screen/egeria_alpha_transparent_background.png" id="5_o101y"]
+[ext_resource type="Texture2D" uid="uid://b5anv3n054dqw" path="res://UI/title_screen/eleonora_alpha_transparent_background.png" id="6_71qku"]
+[ext_resource type="AudioStream" uid="uid://dg1yp8um3l5qg" path="res://UI/title_screen/voids.ogg" id="8_71qku"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omrav"]
+bg_color = Color(0.0142752, 0.0142752, 0.0142752, 0.94902)
+
+[sub_resource type="Theme" id="Theme_t6xir"]
+Panel/styles/panel = SubResource("StyleBoxFlat_omrav")
+
+[sub_resource type="LabelSettings" id="LabelSettings_uam0l"]
+font = ExtResource("2_t6xir")
+font_size = 100
+font_color = Color(0.41915, 0.715728, 0.811945, 1)
+outline_size = 9
+outline_color = Color(0.833253, 0.682831, 0.573995, 1)
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.701961)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mclxw"]
+bg_color = Color(0.460175, 0.716529, 0.286128, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 0.301961)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o101y"]
+bg_color = Color(0.498039, 0.796078, 0.956863, 0.227451)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0, 0, 0, 0.74902)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_71qku"]
+bg_color = Color(0.791986, 0.541791, 0.196679, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.0142752, 0.0142752, 0.0142752, 0.854902)
+shadow_size = 15
+
+[sub_resource type="Theme" id="Theme_j8p11"]
+default_base_scale = 1.0
+default_font_size = 0
+Button/font_sizes/font_size = 100
+Button/fonts/font = ExtResource("2_t6xir")
+Button/styles/hover = SubResource("StyleBoxFlat_mclxw")
+Button/styles/normal = SubResource("StyleBoxFlat_o101y")
+Button/styles/pressed = SubResource("StyleBoxFlat_71qku")
+
+[sub_resource type="Animation" id="Animation_pr4oc"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/Title_text:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/Title_text:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/Title_text:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/Title_text:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Panel/StartButton:self_modulate:r")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Panel/StartButton:self_modulate:g")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Panel/StartButton:self_modulate:b")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Panel/StartButton:self_modulate:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_gehhv"]
+resource_name = "title_screen_animation"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/Title_text:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.167, -0.25, 0, 0.25, 0, 0.333, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0, 0.667, -0.25, 0, 0.25, 0, 0.833, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2, 4, 6, 8, 10, 12)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/Title_text:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.333, -0.25, 0, 0.25, 0, 0.666, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 4, 8, 12)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/Title_text:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.25, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0, 0.75, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3.03333, 6.03333, 9, 12)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/Title_text:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.75, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 6.06667, 12)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Panel/StartButton:self_modulate:r")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 4, 8)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Panel/StartButton:self_modulate:g")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(4.03333)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Panel/StartButton:self_modulate:b")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 4.06667, 9.03333)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Panel/StartButton:self_modulate:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.25, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.0333333, 1.96667)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mclxw"]
+_data = {
+&"RESET": SubResource("Animation_pr4oc"),
+&"title_screen_animation": SubResource("Animation_gehhv")
+}
+
+[node name="title_screen" type="CanvasLayer"]
+script = ExtResource("1_o101y")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_t6xir")
+
+[node name="BackgroundImage" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_cbldu")
+expand_mode = 2
+
+[node name="Title_text" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -241.5
+offset_top = 40.0
+offset_right = 241.5
+offset_bottom = 217.0
+grow_horizontal = 2
+text = "Oort Orbit"
+label_settings = SubResource("LabelSettings_uam0l")
+
+[node name="CometImage" type="TextureRect" parent="Panel"]
+modulate = Color(0.894922, 0.894922, 0.894922, 1)
+self_modulate = Color(0.359069, 0.359069, 0.359069, 1)
+layout_mode = 0
+offset_right = 306.0
+offset_bottom = 205.0
+texture = ExtResource("3_uam0l")
+expand_mode = 1
+
+[node name="ElektraImage" type="TextureRect" parent="Panel"]
+modulate = Color(0.273873, 0.273873, 0.273872, 1)
+layout_mode = 0
+offset_left = 872.0
+offset_top = 386.0
+offset_right = 1093.0
+offset_bottom = 530.0
+texture = ExtResource("4_mclxw")
+expand_mode = 1
+
+[node name="EgeriaImage" type="TextureRect" parent="Panel"]
+modulate = Color(0.273873, 0.273873, 0.273872, 1)
+layout_mode = 0
+offset_left = 772.0
+offset_top = 160.0
+offset_right = 993.0
+offset_bottom = 304.0
+texture = ExtResource("5_o101y")
+expand_mode = 1
+
+[node name="EgeriaImage2" type="TextureRect" parent="Panel"]
+modulate = Color(0.273873, 0.273873, 0.273872, 1)
+layout_mode = 0
+offset_left = 368.0
+offset_top = 4.0
+offset_right = 528.0
+offset_bottom = 113.0
+texture = ExtResource("6_71qku")
+expand_mode = 1
+
+[node name="StartButton" type="Button" parent="Panel"]
+modulate = Color(0.963688, 0.692129, 0.470671, 1)
+self_modulate = Color(0, 0, 0, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.51
+anchor_top = 0.727
+anchor_right = 0.51
+anchor_bottom = 0.727
+offset_left = -89.5201
+offset_top = -44.096
+offset_right = 267.48
+offset_bottom = 132.904
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_j8p11")
+text = "Start"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_mclxw")
+}
+autoplay = "title_screen_animation"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_71qku")
+autoplay = true
+parameters/looping = true
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+
+[connection signal="pressed" from="Panel/StartButton" to="." method="_on_start_button_pressed"]

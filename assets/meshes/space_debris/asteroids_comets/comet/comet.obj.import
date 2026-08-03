@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://blv7p2sshpna4"
+path="res://.godot/imported/comet.obj-edef3d08925c520c08894511c5be24f6.mesh"
+
+[deps]
+
+files=["res://.godot/imported/comet.obj-edef3d08925c520c08894511c5be24f6.mesh"]
+
+source_file="res://assets/meshes/space_debris/asteroids_comets/comet/comet.obj"
+dest_files=["res://.godot/imported/comet.obj-edef3d08925c520c08894511c5be24f6.mesh", "res://.godot/imported/comet.obj-edef3d08925c520c08894511c5be24f6.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

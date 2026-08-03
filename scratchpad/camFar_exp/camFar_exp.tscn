@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dawwroq0c6lvx"]
+
+[ext_resource type="Script" uid="uid://crj07nfyik1tk" path="res://scratchpad/camFar_exp/cam_pivot.gd" id="1_33mto"]
+[ext_resource type="ArrayMesh" uid="uid://bimubl3x6co41" path="res://scratchpad/camFar_exp/10xplane.obj" id="2_73qop"]
+[ext_resource type="ArrayMesh" uid="uid://ci8qvm5d051e" path="res://scratchpad/camFar_exp/elektra.tres" id="2_wsdi8"]
+
+[sub_resource type="MultiMesh" id="MultiMesh_7m32t"]
+transform_format = 1
+mesh = ExtResource("2_wsdi8")
+
+[node name="root" type="Node3D" unique_id=654666239]
+
+[node name="camPivot" type="Node3D" parent="." unique_id=143023126 node_paths=PackedStringArray("camera", "spawn_plane", "multi_mesh_instance")]
+script = ExtResource("1_33mto")
+camera = NodePath("Camera3D")
+spawn_plane = NodePath("plane")
+multi_mesh_instance = NodePath("asteroids")
+
+[node name="Camera3D" type="Camera3D" parent="camPivot" unique_id=706253238]
+
+[node name="asteroids" type="MultiMeshInstance3D" parent="camPivot" unique_id=1055226285]
+multimesh = SubResource("MultiMesh_7m32t")
+
+[node name="plane" type="MeshInstance3D" parent="camPivot" unique_id=1978346367]
+transform = Transform3D(100, 0, 0, 0, -4.371139e-06, -100, 0, 100, -4.371139e-06, 0, 0, -200)
+mesh = ExtResource("2_73qop")
+skeleton = NodePath("../Camera3D")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=852917]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 159.72168, -236.21613)
+light_energy = 4.0

@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkbomiveyykgf"]
+
+[ext_resource type="Script" path="res://UI/game_over/game_over.gd" id="1_6oaaq"]
+[ext_resource type="AudioStream" uid="uid://cq6dlbkqhba0s" path="res://UI/game_over/oortOrbit_gameOver.mp3" id="2_hgk0a"]
+
+[sub_resource type="Theme" id="Theme_hrblp"]
+default_font_size = 60
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchor_top = 0.011
+anchor_right = 1.0
+anchor_bottom = 0.998
+offset_left = 2.0
+offset_top = -0.128001
+offset_bottom = 0.295959
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6oaaq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.0
+offset_top = -41.5
+offset_right = 163.0
+offset_bottom = 41.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_hrblp")
+text = "Game Over"
+
+[node name="current_score_label" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="high_score_label" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Retry" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Retry"
+
+[node name="Back" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(573, 317)
+
+[node name="game_over_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_hgk0a")
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Back" to="." method="_on_quit_pressed"]

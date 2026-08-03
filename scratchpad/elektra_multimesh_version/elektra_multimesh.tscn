@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dvfyeeqjeyixt"]
+
+[ext_resource type="Script" uid="uid://clbilt236ll4k" path="res://scratchpad/elektra_multimesh_version/elektra_multimesh.gd" id="1_asdjh"]
+[ext_resource type="ArrayMesh" uid="uid://o2yorek86qa" path="res://scratchpad/elektra_multimesh_version/elektra.tres" id="2_skmry"]
+[ext_resource type="Script" uid="uid://bbksmdonhp6a8" path="res://scratchpad/elektra_multimesh_version/elektra_mmi3dctrl.gd" id="3_qvgo2"]
+
+[sub_resource type="MultiMesh" id="MultiMesh_asdjh"]
+transform_format = 1
+use_colors = true
+mesh = ExtResource("2_skmry")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lb6wy"]
+radius = 0.805747
+height = 3.47958
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fxgda"]
+radius = 0.60635
+
+[node name="Elektra" type="RigidBody3D" unique_id=1984109843]
+gravity_scale = 0.0
+script = ExtResource("1_asdjh")
+
+[node name="elektra_MultiMeshInstance3D" type="MultiMeshInstance3D" parent="." unique_id=1063407674]
+transform = Transform3D(4.8, 0, 0, 0, 4.8, 0, 0, 0, 4.8, -0.12976265, 0, 0)
+multimesh = SubResource("MultiMesh_asdjh")
+script = ExtResource("3_qvgo2")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=81950286]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=421829769]
+
+[node name="healthCollider" type="CollisionShape3D" parent="Area3D" unique_id=1901332514]
+transform = Transform3D(1.85785, 0.541043, -0.505627, -0.740531, 1.35737, -1.26852, 0, 1.36558, 1.46123, -0.0267785, 0.460554, -0.44312)
+shape = SubResource("CapsuleShape3D_lb6wy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1842188349]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.130987, 0.339692, 0)
+shape = SubResource("SphereShape3D_fxgda")
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

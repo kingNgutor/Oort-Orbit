@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://doxhypaq750ya"]
+
+[sub_resource type="Theme" id="Theme_7n1pn"]
+default_font_size = 32
+
+[sub_resource type="Theme" id="Theme_pasi8"]
+default_font_size = 32
+
+[node name="highscore_hud_control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_bottom = 94.0
+grow_horizontal = 0
+
+[node name="current_score_display" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_7n1pn")
+text = "asdf"
+
+[node name="highscore_display" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_pasi8")
+text = "afdadf"

@@ -1,0 +1,106 @@
+[gd_resource type="Theme" format=3 uid="uid://phdjvsqxdlbk"]
+
+[ext_resource type="StyleBox" uid="uid://b3amdn1i52ty2" path="res://UI/main_menu/primary_style_box_flat.tres" id="1_hxsb5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hxsb5"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.349481, 0.772614, 0.650763, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 0.32549)
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rl2hp"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.194953, 0.694119, 0.552449, 1)
+border_color = Color(0.434002, 0.912268, 0.648682, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.403922)
+shadow_size = 6
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hxsb5"]
+content_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ui7pa"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.118187, 0.664018, 0.802559, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.859693, 0.823435, 0.19111, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 0.258824)
+shadow_size = 6
+anti_aliasing_size = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w5ey0"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.680113, 0.296193, 0.357003, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.684635, 0.658122, 0.290182, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 10
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.368627)
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32f5q"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.838787, 0.475002, 0.18281, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.684635, 0.658122, 0.290182, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 0.368627)
+shadow_size = 6
+
+[resource]
+Button/styles/normal = SubResource("StyleBoxFlat_hxsb5")
+ContinueButton/base_type = &"Button"
+ContinueButton/styles/normal = SubResource("StyleBoxFlat_rl2hp")
+Label/font_sizes/font_size = 30
+Label/styles/normal = SubResource("StyleBoxEmpty_hxsb5")
+NewGameButton/base_type = &"Button"
+NewGameButton/styles/normal = SubResource("StyleBoxFlat_ui7pa")
+PanelContainer/styles/panel = ExtResource("1_hxsb5")
+QuitButton/base_type = &"Button"
+QuitButton/styles/normal = SubResource("StyleBoxFlat_w5ey0")
+SettingsButton/base_type = &"Button"
+SettingsButton/styles/normal = SubResource("StyleBoxFlat_32f5q")
+VBoxContainer/constants/separation = 10

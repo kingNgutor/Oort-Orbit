@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://blgitcwv4fqb2"]
+
+[ext_resource type="Script" uid="uid://c8ihut6tc4e2c" path="res://scratchpad/quaternion_rotation_test/quaternion_experiment.gd" id="2_gcn78"]
+[ext_resource type="PackedScene" uid="uid://812nv0pd3oir" path="res://scratchpad/quaternion_rotation_test/lightfighter_yflip.glb" id="2_txmlp"]
+[ext_resource type="Script" uid="uid://ewpgw6bmqh7i" path="res://scratchpad/quaternion_rotation_test/lightfighter_yflip.gd" id="3_gcn78"]
+[ext_resource type="Script" uid="uid://dic4d5fcgd5s7" path="res://scratchpad/quaternion_rotation_test/camera_pivot.gd" id="4_w67mb"]
+[ext_resource type="Texture2D" uid="uid://1smyfgikylq4" path="res://assets/textures/ESO_-_Milky_Way.jpg" id="5_mc0fk"]
+[ext_resource type="Script" uid="uid://cxphnnnsrhc3d" path="res://stages/pooled_asteroid/objpool-experimental/pooled_asteroid-[Autoload-Version].gd" id="6_ra2qx"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ra2qx"]
+panorama = ExtResource("5_mc0fk")
+
+[sub_resource type="Sky" id="Sky_8l5jx"]
+sky_material = SubResource("PanoramaSkyMaterial_ra2qx")
+
+[sub_resource type="Environment" id="Environment_yfntw"]
+background_mode = 2
+sky = SubResource("Sky_8l5jx")
+
+[node name="quaternion_rotation_test" type="Node3D"]
+script = ExtResource("2_gcn78")
+
+[node name="lightfighter_yflip" parent="." instance=ExtResource("2_txmlp")]
+transform = Transform3D(0.9999999, 0, 0, 0, 1.0000002, 0, 0, 0, 0.99999994, 0, 0, 0)
+script = ExtResource("3_gcn78")
+
+[node name="cameraPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25.337)
+script = ExtResource("4_w67mb")
+
+[node name="Camera3D" type="Camera3D" parent="cameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.1444092e-05)
+
+[node name="worldpivot" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="worldpivot"]
+environment = SubResource("Environment_yfntw")
+
+[node name="astroidPool" type="Node3D" parent="."]
+script = ExtResource("6_ra2qx")

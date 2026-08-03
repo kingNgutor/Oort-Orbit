@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://co51fdwxcll5m"
+path="res://.godot/imported/elektra.obj-86d81c2575ecb1edcc389997501b3eee.mesh"
+
+[deps]
+
+files=["res://.godot/imported/elektra.obj-86d81c2575ecb1edcc389997501b3eee.mesh"]
+
+source_file="res://assets/meshes/space_debris/asteroids_comets/elektra/elektra.obj"
+dest_files=["res://.godot/imported/elektra.obj-86d81c2575ecb1edcc389997501b3eee.mesh", "res://.godot/imported/elektra.obj-86d81c2575ecb1edcc389997501b3eee.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

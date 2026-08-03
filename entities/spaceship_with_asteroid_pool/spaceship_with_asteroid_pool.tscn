@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxkltj25a787b"]
+
+[ext_resource type="PackedScene" uid="uid://byng3phbk51mq" path="res://entities/player_spaceship/player_spaceship.tscn" id="1_0kxpx"]
+[ext_resource type="PackedScene" uid="uid://bdxy1f0hxfya0" path="res://stages/pooled_asteroid/pooled_asteroid.tscn" id="2_e7056"]
+
+[node name="spaceship_with_asteroid_pool" type="Node3D"]
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_0kxpx")]
+
+[node name="pooled_asteroid" parent="." instance=ExtResource("2_e7056")]

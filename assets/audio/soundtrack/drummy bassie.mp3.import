@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bh8fmujl1clpq"
+path="res://.godot/imported/drummy bassie.mp3-7c36df7ed7a4170140614bd23332dc47.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/soundtrack/drummy bassie.mp3"
+dest_files=["res://.godot/imported/drummy bassie.mp3-7c36df7ed7a4170140614bd23332dc47.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

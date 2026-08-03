@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dhcc1ddt4hi6q"]
+
+[ext_resource type="Script" uid="uid://i2ijjxj815ge" path="res://scratchpad/asteroidField-playerMultimeshInstance3DElektraWorldEnv/asteroid_field_player_mmi.gd" id="1_amlej"]
+[ext_resource type="Script" uid="uid://bjuq530y2ywip" path="res://scratchpad/elektra_rb3d-[no mesh]/pooled_asteroid-mmi3-[Autoload-Version].gd" id="3_amlej"]
+[ext_resource type="PackedScene" uid="uid://ypy7v8x822ik" path="res://entities/explosion/explosion.tscn" id="4_a61t0"]
+[ext_resource type="Script" uid="uid://b8pyoh7d2og5d" path="res://scratchpad/asteroidField-playerMultimeshInstance3DElektraWorldEnv/IPC-[rawdog-no-LLM].gd" id="4_by2un"]
+[ext_resource type="PackedScene" uid="uid://byng3phbk51mq" path="res://entities/player_spaceship/player_spaceship.tscn" id="5_dv5u8"]
+[ext_resource type="Script" uid="uid://b85eu6kkijub0" path="res://scratchpad/asteroidField-playerMultimeshInstance3DElektraWorldEnv/game_manager.gd" id="6_dv5u8"]
+[ext_resource type="PackedScene" uid="uid://61awvvrsdjqt" path="res://entities/asteroids-comets/eleonora.tscn" id="7_by2un"]
+
+[node name="asteroidField-playerMMI" type="Node3D" unique_id=593530396]
+script = ExtResource("1_amlej")
+
+[node name="GameManager" type="Node" parent="." unique_id=1333628323]
+script = ExtResource("6_dv5u8")
+
+[node name="flycam" type="Node3D" parent="." unique_id=1429423091 node_paths=PackedStringArray("target", "camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.179, 0)
+script = ExtResource("4_by2un")
+target = NodePath("../CharacterBody3D")
+camera = NodePath("Camera3D")
+
+[node name="Camera3D" type="Camera3D" parent="flycam" unique_id=321839187]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0004553795, 0)
+
+[node name="Explosion" parent="flycam" unique_id=2028201938 instance=ExtResource("4_a61t0")]
+
+[node name="pooled-asteroid-mmi3" type="Node3D" parent="." unique_id=1909979789]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4000)
+script = ExtResource("3_amlej")
+
+[node name="CharacterBody3D" parent="." unique_id=114457759 instance=ExtResource("5_dv5u8")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1624216598]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.170446, 0)
+
+[node name="Eleonora" parent="." unique_id=165913554 instance=ExtResource("7_by2un")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.051743, 0, 0)

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://binnaa83w5ey4"]
+
+[ext_resource type="Texture2D" uid="uid://bkrvr6kwb376r" path="res://assets/meshes/space_debris/asteroids_comets/elektra/lowpoly/Elektra-f836_Elektra Base Color.png" id="1_xk38w"]
+
+[resource]
+resource_name = "Material.003"
+cull_mode = 2
+albedo_texture = ExtResource("1_xk38w")
+roughness = 0.5

@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://bionll3xbuq0r"]
+
+[ext_resource type="Script" uid="uid://dn3n0hdrasay7" path="res://stages/worldenv_Player_AsteroidPool/worldenv_player_asteroid_pool.gd" id="1_u0lr1"]
+[ext_resource type="Script" uid="uid://yv85ygr1p5r2" path="res://stages/worldenv_Player_AsteroidPool/game_manager.gd" id="2_1u32p"]
+[ext_resource type="Texture2D" uid="uid://1smyfgikylq4" path="res://assets/textures/ESO_-_Milky_Way.jpg" id="2_6eyr0"]
+[ext_resource type="PackedScene" uid="uid://dx4bojs183d38" path="res://UI/pause_menu/pause_menu.tscn" id="3_80d27"]
+[ext_resource type="Script" uid="uid://bj3nrtdsk2rcq" path="res://stages/worldenv_Player_AsteroidPool/world_environment.gd" id="3_ftm03"]
+[ext_resource type="PackedScene" uid="uid://byng3phbk51mq" path="res://entities/player_spaceship/player_spaceship.tscn" id="3_t2wlr"]
+[ext_resource type="PackedScene" uid="uid://c4xgwqgxtyhp2" path="res://UI/HUD/health_bar_control_node.tscn" id="6_l8mhn"]
+[ext_resource type="PackedScene" uid="uid://ypy7v8x822ik" path="res://entities/explosion/explosion.tscn" id="6_xg0oj"]
+[ext_resource type="PackedScene" uid="uid://doxhypaq750ya" path="res://UI/HUD/highscore_hud_control.tscn" id="10_1klsn"]
+[ext_resource type="Script" uid="uid://d4gurbypnbj2f" path="res://common/camera/IPC-[rawdog-no-LLM].gd" id="10_71m1q"]
+[ext_resource type="Script" uid="uid://cxphnnnsrhc3d" path="res://stages/pooled_asteroid/objpool-experimental/pooled_asteroid-[Autoload-Version].gd" id="12_tx7vi"]
+[ext_resource type="Script" uid="uid://cdsanblx631pv" path="res://common/camera/InertialCamera-[experimental].gd" id="13_5de2o"]
+[ext_resource type="PackedScene" uid="uid://u17u7s8aaakg" path="res://assets/meshes/space_debris/asteroids_comets/comet/comet.glb" id="14_5de2o"]
+[ext_resource type="AudioStream" uid="uid://bh8fmujl1clpq" path="res://assets/audio/soundtrack/drummy bassie.mp3" id="14_6eyr0"]
+[ext_resource type="Script" uid="uid://df6pwqt2sqiwr" path="res://stages/worldenv_Player_AsteroidPool/music_soundtrack.gd" id="15_hrico"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_l8mhn"]
+panorama = ExtResource("2_6eyr0")
+
+[sub_resource type="Sky" id="Sky_1u32p"]
+sky_material = SubResource("PanoramaSkyMaterial_l8mhn")
+
+[sub_resource type="Environment" id="Environment_xg0oj"]
+background_mode = 2
+sky = SubResource("Sky_1u32p")
+
+[node name="WorldenvPlayerAsteroidPool" type="Node3D" unique_id=521009177]
+script = ExtResource("1_u0lr1")
+
+[node name="WorldPivot" type="Node3D" parent="." unique_id=636351869]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="WorldPivot" unique_id=1355105910]
+environment = SubResource("Environment_xg0oj")
+script = ExtResource("3_ftm03")
+
+[node name="AudioListener3D" type="AudioListener3D" parent="WorldPivot/WorldEnvironment" unique_id=1413370588]
+current = true
+
+[node name="GameManager" type="Node" parent="." unique_id=529022796]
+script = ExtResource("2_1u32p")
+
+[node name="pause_menu" parent="GameManager" unique_id=1702829935 instance=ExtResource("3_80d27")]
+visible = false
+
+[node name="CharacterBody3D" parent="." unique_id=1083784401 groups=["player"] instance=ExtResource("3_t2wlr")]
+
+[node name="lookat" type="Node3D" parent="CharacterBody3D" unique_id=510375666]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="camraTarget (Marker3D)" type="Marker3D" parent="CharacterBody3D" unique_id=508179647]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.39691)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1959963051]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1971122779]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 36.0
+offset_bottom = 51.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control" unique_id=1770990379]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 31.944
+anchor_bottom = 1.196
+offset_right = 0.0158691
+offset_bottom = 0.00399399
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="HealthBar_Control_Node" parent="CanvasLayer/Control/HBoxContainer" unique_id=661328774 instance=ExtResource("6_l8mhn")]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="CanvasLayer" unique_id=1518721919]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 67.0
+offset_bottom = 52.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control2" unique_id=1596169602]
+layout_mode = 0
+offset_right = 328.0
+offset_bottom = 192.0
+
+[node name="highscore_hud_control" parent="CanvasLayer/Control2/VBoxContainer" unique_id=1399859013 instance=ExtResource("10_1klsn")]
+layout_mode = 2
+
+[node name="asteroid-objectPool-Manager" type="Node3D" parent="." unique_id=1110420157]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -100)
+script = ExtResource("12_tx7vi")
+
+[node name="flycam" type="Node3D" parent="." unique_id=1955707246 node_paths=PackedStringArray("target", "camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.1201)
+script = ExtResource("10_71m1q")
+target = NodePath("../CharacterBody3D")
+camera = NodePath("Camera3D")
+
+[node name="Camera3D" type="Camera3D" parent="flycam" unique_id=745699397]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00217, 0.77104)
+
+[node name="Explosion" parent="flycam" unique_id=1311495130 instance=ExtResource("6_xg0oj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.2172)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=367048216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14.17346)
+visible = false
+script = ExtResource("13_5de2o")
+
+[node name="comet" parent="." unique_id=1784222959 instance=ExtResource("14_5de2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.7462, 5.58605, -57.3873)
+visible = false
+
+[node name="MusicSoundtrack" type="AudioStreamPlayer3D" parent="." unique_id=1899768835]
+stream = ExtResource("14_6eyr0")
+attenuation_model = 3
+bus = &"Music"
+parameters/looping = true
+script = ExtResource("15_hrico")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://crdmyg84c5k8u"]
+
+[ext_resource type="Script" path="res://stages/pooled_asteroid/objpool-experimental/pooled_asteroid-[Autoload-Version].gd" id="1_qrerh"]
+
+[node name="pooled_asteroid" type="Node3D"]
+script = ExtResource("1_qrerh")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 77.9268, 148.771)
+light_energy = 1.975
+omni_range = 1280.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 510.376)
+current = true

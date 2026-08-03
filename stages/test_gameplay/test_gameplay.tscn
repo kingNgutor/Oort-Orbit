@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://fhkg6p6j42lo"]
+
+[ext_resource type="PackedScene" uid="uid://7vuhjdhx0stn" path="res://stages/milky_way/milky_way.tscn" id="1_08tlp"]
+[ext_resource type="PackedScene" uid="uid://bdxy1f0hxfya0" path="res://stages/pooled_asteroid/pooled_asteroid.tscn" id="2_cj0km"]
+[ext_resource type="PackedScene" uid="uid://cxkltj25a787b" path="res://entities/spaceship_with_asteroid_pool/spaceship_with_asteroid_pool.tscn" id="3_cj0km"]
+
+[node name="testGameplay" type="Node3D"]
+
+[node name="milky_way" parent="." instance=ExtResource("1_08tlp")]
+
+[node name="pooled_asteroid" parent="." instance=ExtResource("2_cj0km")]
+visible = false
+
+[node name="spaceship_with_asteroid_pool" parent="." instance=ExtResource("3_cj0km")]

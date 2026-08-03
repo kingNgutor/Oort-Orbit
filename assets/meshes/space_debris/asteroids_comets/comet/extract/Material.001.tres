@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://otnitjhkqj4v"]
+
+[ext_resource type="Texture2D" uid="uid://bgyyclkyr18ej" path="res://assets/meshes/space_debris/asteroids_comets/comet/comet_Icosphere Base Color.png" id="1_0w3qp"]
+
+[resource]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_0w3qp")
+metallic = 0.3
+roughness = 0.2909091
